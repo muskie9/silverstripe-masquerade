@@ -1,8 +1,20 @@
 <?php
 
+namespace DHensby\Masquerade\Forms\GridField;
+
+use SilverStripe\Control\Controller;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\GridField\GridField_ColumnProvider;
+use SilverStripe\ORM\DataObject;
+use SilverStripe\Security\Member;
+use SilverStripe\View\ArrayData;
+
+/**
+ * Class GridFieldMasqueradeButton
+ * @package DHensby\Masquerade\Forms\GridField
+ */
 class GridFieldMasqueradeButton implements GridField_ColumnProvider
 {
-
     /**
      * @param GridField $gridField
      * @param array $columns
@@ -24,7 +36,7 @@ class GridFieldMasqueradeButton implements GridField_ColumnProvider
      */
     public function getColumnAttributes($gridField, $record, $columnName)
     {
-        return array('class' => 'col-buttons');
+        return ['class' => 'grid-field__col-compact'];
     }
 
     /**
@@ -37,7 +49,7 @@ class GridFieldMasqueradeButton implements GridField_ColumnProvider
     public function getColumnMetadata($gridField, $columnName)
     {
         if ($columnName == 'Actions') {
-            return array('title' => '');
+            return ['title' => ''];
         }
     }
 
@@ -49,7 +61,7 @@ class GridFieldMasqueradeButton implements GridField_ColumnProvider
      */
     public function getColumnsHandled($gridField)
     {
-        return array('Actions');
+        return ['Actions'];
     }
 
     /**
@@ -59,7 +71,7 @@ class GridFieldMasqueradeButton implements GridField_ColumnProvider
      */
     public function getActions()
     {
-        return array('masquerade');
+        return ['masquerade'];
     }
 
     /**
@@ -77,12 +89,10 @@ class GridFieldMasqueradeButton implements GridField_ColumnProvider
         // No permission checks, handled through GridFieldDetailForm,
         // which can make the form readonly if no edit permissions are available.
 
-        $data = new ArrayData(array(
-            'Link' => Controller::join_links($gridField->Link('item'), $record->ID, 'masquerade')
-        ));
+        $data = ArrayData::create([
+            'Link' => Controller::join_links($gridField->Link('item'), $record->ID, 'masquerade'),
+        ]);
 
         return $data->renderWith('GridFieldMasqueradeButton');
     }
-
-
 }

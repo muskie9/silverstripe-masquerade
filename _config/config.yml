@@ -1,13 +1,13 @@
 ---
 Name: masqueradeconfig
 ---
-Member:
+SilverStripe\Security\Member:
   extensions:
-    - MasqueradeMemberExtension
-SecurityAdmin:
+    - DHensby\Masquerade\Extensions\MasqueradeMemberExtension
+SilverStripe\Admin\SecurityAdmin:
   extensions:
-    - MasqueradeSecurityAdminExtension
-LeftAndMain:
+    - DHensby\Masquerade\Extensions\MasqueradeSecurityAdminExtension
+SilverStripe\Admin\LeftAndMain:
   extra_requirements_css:
     masquerade/css/masquerade.css:
       media: screen

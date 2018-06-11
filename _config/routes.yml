@@ -1,9 +1,8 @@
 ---
-Name: coreroutes
+Name: masqueradecoreroutes
 After:
-  - '#rootroutes'
-  - '#modelascontrollerroutes'
+  - 'rootroutes'
 ---
 Director:
   rules:
-    'Security//$Action/$ID/$OtherID': 'MasqueradeSecurityController'
+    'Security//$Action/$ID/$OtherID': 'DHensby\Masquerade\Controllers\MasqueradeSecurityController'

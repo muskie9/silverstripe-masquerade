@@ -22,6 +22,12 @@
         },
         "installer-name": "masquerade"
     },
+    "autoload": {
+        "psr-4": {
+            "DHensby\\Masquerade\\": "src/",
+            "DHensby\\Masquerade\\Tests\\": "tests/"
+        }
+    },
     "prefer-stable": true,
     "minimum-stability": "dev"
 }
