@@ -1,6 +1,9 @@
 <?php
 
-class MasqueradeSecurityAdminExtension extends Extension {
+use SilverStripe\ORM\DataExtension;
+use SilverStripe\Forms\GridField\GridFieldDetailForm;
+
+class MasqueradeSecurityAdminExtension extends DataExtension  {
 
     public function updateEditForm($form)
     {
@@ -10,8 +13,8 @@ class MasqueradeSecurityAdminExtension extends Extension {
             ->addComponent(
                 new GridFieldMasqueradeButton()
             )
-            ->getComponentByType('GridFieldDetailForm')
-            ->setItemRequestClass('MasqueradeGridFieldDetailForm_ItemRequest')
+            ->getComponentByType(GridFieldDetailForm::class)
+            ->setItemRequestClass(MasqueradeGridFieldDetailForm_ItemRequest::class)
         ;
     }
 

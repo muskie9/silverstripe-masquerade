@@ -5,6 +5,12 @@
  *
  * The masquerade decorator for Member objects
  */
+
+use SilverStripe\ORM\DataExtension;
+use SilverStripe\Security\Member;
+use SilverStripe\Control\Session;
+use SilverStripe\Security\Permission;
+
 class MasqueradeMemberExtension extends DataExtension
 {
 

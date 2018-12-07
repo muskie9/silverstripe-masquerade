@@ -1,4 +1,6 @@
 <?php
+use SilverStripe\Forms\GridField\GridFieldDetailForm_ItemRequest;
+use SilverStripe\Security\Security;
 
 class MasqueradeGridFieldDetailForm_ItemRequest extends GridFieldDetailForm_ItemRequest {
 

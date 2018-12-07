@@ -1,11 +1,16 @@
 <?php
 
+use SilverStripe\Security\Security;
+use SilverStripe\Control\Session;
+
 class MasqueradeSecurityController extends Security {
 
     private static $allowed_actions = array(
         'logout',
     );
 
+    
+    /*
     public function logout($redirect = true)
     {
         if (Session::get('Masquerade.Old.loggedInAs')) {
@@ -22,5 +27,5 @@ class MasqueradeSecurityController extends Security {
             parent::logout($redirect);
         }
     }
-
+    */
 }

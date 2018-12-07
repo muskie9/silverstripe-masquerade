@@ -1,5 +1,7 @@
 <?php
 
+use SilverStripe\Forms\GridField\GridField_ColumnProvider;
+
 class GridFieldMasqueradeButton implements GridField_ColumnProvider
 {
 
@@ -81,7 +83,7 @@ class GridFieldMasqueradeButton implements GridField_ColumnProvider
             'Link' => Controller::join_links($gridField->Link('item'), $record->ID, 'masquerade')
         ));
 
-        return $data->renderWith('GridFieldMasqueradeButton');
+        return $data->renderWith(GridFieldMasqueradeButton::class);
     }
 
 

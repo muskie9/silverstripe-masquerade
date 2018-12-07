@@ -1,10 +1,10 @@
 ---
 Name: masqueradeconfig
 ---
-Member:
+SilverStripe\Security\Member:
   extensions:
     - MasqueradeMemberExtension
-SecurityAdmin:
+SilverStripe\Security\SecurityAdmin:
   extensions:
     - MasqueradeSecurityAdminExtension
 LeftAndMain:

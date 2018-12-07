@@ -1,8 +1,5 @@
 ---
-Name: coreroutes
-After:
-  - '#rootroutes'
-  - '#modelascontrollerroutes'
+Name: masquerade-routes
 ---
 Director:
   rules:
